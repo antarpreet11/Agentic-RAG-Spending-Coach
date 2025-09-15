@@ -92,52 +92,28 @@ def _filter_transactions(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     
     return df_filtered, removed_df
 
-def _infer_bank_name(df: pd.DataFrame, headers: List[str]) -> str:
-    """Try to infer bank name from headers or data content"""
+def _extract_card_name_from_filename(filename: str) -> str:
+    """Extract card name from filename and format it properly.
     
-    # Check for common bank indicators in headers
-    header_text = " ".join(headers).lower()
+    Examples:
+    - amazon_mastercard_1.csv -> Amazon Mastercard 1
+    - neo_mastercard_2.csv -> Neo Mastercard 2
+    - scotiabank_scene_visa.csv -> Scotiabank Scene Visa
+    """
+    if not filename:
+        return "Unknown Card"
     
-    if "amazon" in header_text or "payee" in headers:
-        return "amazon_mastercard"
-    elif "visa" in header_text:
-        return "visa"
-    elif "mastercard" in header_text:
-        return "mastercard"
-    elif "amex" in header_text or "american express" in header_text:
-        return "american_express"
-    elif "td" in header_text or "toronto dominion" in header_text:
-        return "td_bank"
-    elif "rbc" in header_text or "royal bank" in header_text:
-        return "rbc"
-    elif "bmo" in header_text or "bank of montreal" in header_text:
-        return "bmo"
-    elif "cibc" in header_text:
-        return "cibc"
-    elif "desjardins" in header_text:
-        return "desjardins"
-    elif "tangerine" in header_text:
-        return "tangerine"
-    elif "simplii" in header_text:
-        return "simplii"
-    else:
-        # Try to infer from data content (sample first few rows)
-        try:
-            sample_data = df.head(3).astype(str).values.flatten()
-            data_text = " ".join(sample_data).lower()
-            
-            if "amazon" in data_text:
-                return "amazon_mastercard"
-            elif "visa" in data_text:
-                return "visa"
-            elif "mastercard" in data_text:
-                return "mastercard"
-        except:
-            pass
-        
-        return "unknown_bank"
+    # Get just the filename without path and extension
+    import os
+    basename = os.path.basename(filename)
+    name_without_ext = os.path.splitext(basename)[0]
+    
+    # Replace underscores with spaces and title case
+    card_name = name_without_ext.replace('_', ' ').title()
+    
+    return card_name
 
-def _apply_rules_or_llm(df: pd.DataFrame, model_name: str) -> Tuple[str, HeaderMap]:
+def _apply_rules_or_llm(df: pd.DataFrame, model_name: str, filename: str = "") -> Tuple[str, HeaderMap]:
     headers = _headers_lower(df)
     
     bank = detect_known_bank(headers)
@@ -176,12 +152,12 @@ def _apply_rules_or_llm(df: pd.DataFrame, model_name: str) -> Tuple[str, HeaderM
     # Unknown → LLM mapping
     logger.info(f"Unknown bank format - using LLM mapping")
     
-    # Try to infer bank name from filename or content
-    bank_name = _infer_bank_name(df, headers)
-    logger.info(f"Bank inferred as: {bank_name}")
+    # Extract card name directly from filename
+    card_name = _extract_card_name_from_filename(filename)
+    logger.info(f"Card name: {card_name}")
     
     result = map_headers_with_llm(list(df.columns), model_name=model_name)
-    return bank_name, result
+    return card_name, result
 
 def ingest_files(paths: List[str], account_id: str = "default", model_name: str = "gemini-2.0-flash-lite") -> Tuple[pd.DataFrame, pd.DataFrame]:
     clean_rows: List[Dict[str, Any]] = []
@@ -192,7 +168,7 @@ def ingest_files(paths: List[str], account_id: str = "default", model_name: str 
         df = read_csv_loose(path)
         logger.info(f"  {len(df)} rows, {len(df.columns)} columns")
         
-        bank, header_map = _apply_rules_or_llm(df, model_name=model_name)
+        bank, header_map = _apply_rules_or_llm(df, model_name=model_name, filename=path)
 
         for idx, row in df.iterrows():
             r = row.to_dict()
