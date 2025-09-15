@@ -1,0 +1,147 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+server/.venv/
+server/.env
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+.cache/
+
+# Data files (keep structure but ignore content)
+server/data/raw/*
+server/data/processed/*
+!server/data/raw/.gitkeep
+!server/data/processed/.gitkeep
+
+# Cache directories
+.cache/
+cache/
+server/.cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# API keys and secrets
+*.key
+*.pem
+secrets/
+.secrets/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Project-specific
+# OpenAI API responses cache
+server/.cache/
+*.cache
+
+# Processed data files (keep structure)
+server/data/processed/*.csv
+server/data/processed/*.json
+server/data/processed/*.parquet
+
+# Raw data files (user uploads)
+server/data/raw/*.csv
+server/data/raw/*.xlsx
+server/data/raw/*.json
+
+# Model files and checkpoints
+*.pkl
+*.joblib
+*.h5
+*.model
+models/
+checkpoints/
+
+# Jupyter notebooks (if you add any)
+*.ipynb
