@@ -1,0 +1,355 @@
+# Transaction Categorization Taxonomy
+# Version: 3.0 - Reduced the number of categories and subcategories
+# Last Updated: 2025-09-15
+
+categories:
+  groceries:
+    name: "Groceries"
+    subcategories:
+      - "Food & Essentials"
+      - "Specialty Items"
+    
+  restaurants:
+    name: "Restaurants & Dining"
+    subcategories:
+      - "Dining Out"
+      - "Food Delivery"
+      - "Cafe"
+    
+  transport:
+    name: "Transportation"
+    subcategories:
+      - "Gas & Fuel"
+      - "Public Transit"
+      - "Ride Share"
+      - "Parking"
+    
+  bills_utilities:
+    name: "Bills & Utilities"
+    subcategories:
+      - "Utilities"
+      - "Insurance"
+      - "Phone & Internet"
+    
+  housing:
+    name: "Housing"
+    subcategories:
+      - "Rent & Mortgage"
+      - "Maintenance"
+    
+  entertainment:
+    name: "Entertainment"
+    subcategories:
+      - "Streaming & Subscriptions"
+      - "Movies & Events"
+      - "Gaming"
+    
+  shopping:
+    name: "Shopping"
+    subcategories:
+      - "Clothing"
+      - "Electronics"
+      - "General Shopping"
+      - "Financial Services"
+    
+  health:
+    name: "Health & Medical"
+    subcategories:
+      - "Medical Services"
+      - "Pharmacy"
+      - "Fitness"
+    
+  travel:
+    name: "Travel"
+    subcategories:
+      - "Transportation"
+      - "Accommodation"
+    
+  education:
+    name: "Education"
+    subcategories:
+      - "Tuition & Courses"
+      - "Books & Supplies"
+    
+  income:
+    name: "Income & Refunds"
+    subcategories:
+      - "Refunds"
+      - "Cashback"
+    
+
+
+# Comprehensive Merchant Dictionary - Top Credit Card Merchants
+merchant_dictionary:
+  # Food Delivery & Ride Share
+  "UBER EATS": ["restaurants", "Food Delivery"]
+  "UBEREATS": ["restaurants", "Food Delivery"]
+  "DOORDASH": ["restaurants", "Food Delivery"]
+  "SKIP THE DISHES": ["restaurants", "Food Delivery"]
+  "GRUBHUB": ["restaurants", "Food Delivery"]
+  "UBER": ["transport", "Ride Share"]
+  "LYFT": ["transport", "Ride Share"]
+  
+  # Telecommunications
+  "FIDO": ["bills_utilities", "Phone & Internet"]
+  "ROGERS": ["bills_utilities", "Phone & Internet"]
+  "BELL": ["bills_utilities", "Phone & Internet"]
+  "TELUS": ["bills_utilities", "Phone & Internet"]
+  "VERIZON": ["bills_utilities", "Phone & Internet"]
+  "AT&T": ["bills_utilities", "Phone & Internet"]
+  "T-MOBILE": ["bills_utilities", "Phone & Internet"]
+  "SPRINT": ["bills_utilities", "Phone & Internet"]
+  
+  # Coffee & Fast Food
+  "STARBUCKS": ["restaurants", "Cafe"]
+  "TIM HORTONS": ["restaurants", "Cafe"]
+  "DUNKIN": ["restaurants", "Cafe"]
+  "MCDONALDS": ["restaurants", "Dining Out"]
+  "SUBWAY": ["restaurants", "Dining Out"]
+  "BURGER KING": ["restaurants", "Dining Out"]
+  "WENDYS": ["restaurants", "Dining Out"]
+  "KFC": ["restaurants", "Dining Out"]
+  "TACO BELL": ["restaurants", "Dining Out"]
+  "PIZZA HUT": ["restaurants", "Dining Out"]
+  "DOMINOS": ["restaurants", "Dining Out"]
+  "LITTLE CAESARS": ["restaurants", "Dining Out"]
+  "CHIPOTLE": ["restaurants", "Dining Out"]
+  "PANERA": ["restaurants", "Dining Out"]
+  "A&W": ["restaurants", "Dining Out"]
+  "ARBYS": ["restaurants", "Dining Out"]
+  "SONIC": ["restaurants", "Dining Out"]
+  "JACK IN THE BOX": ["restaurants", "Dining Out"]
+  "WHITE CASTLE": ["restaurants", "Dining Out"]
+  "IN N OUT": ["restaurants", "Dining Out"]
+  "FIVE GUYS": ["restaurants", "Dining Out"]
+  "SHAKE SHACK": ["restaurants", "Dining Out"]
+  
+  # Online Shopping & Retail
+  "AMAZON": ["shopping", "General Shopping"]
+  "WALMART": ["groceries", "Food & Essentials"]
+  "TARGET": ["shopping", "General Shopping"]
+  "COSTCO": ["groceries", "Food & Essentials"]
+  "SAM'S CLUB": ["groceries", "Food & Essentials"]
+  "BEST BUY": ["shopping", "Electronics"]
+  "HOME DEPOT": ["shopping", "General Shopping"]
+  "LOWES": ["shopping", "General Shopping"]
+  "IKEA": ["shopping", "General Shopping"]
+  "MACY'S": ["shopping", "Clothing"]
+  "NORDSTROM": ["shopping", "Clothing"]
+  "GAP": ["shopping", "Clothing"]
+  "OLD NAVY": ["shopping", "Clothing"]
+  "BANANA REPUBLIC": ["shopping", "Clothing"]
+  "NIKE": ["shopping", "Clothing"]
+  "ADIDAS": ["shopping", "Clothing"]
+  "UNDER ARMOUR": ["shopping", "Clothing"]
+  "ZARA": ["shopping", "Clothing"]
+  "H&M": ["shopping", "Clothing"]
+  "UNIQLO": ["shopping", "Clothing"]
+  "FOREVER 21": ["shopping", "Clothing"]
+  "AMERICAN EAGLE": ["shopping", "Clothing"]
+  "AEROPOSTALE": ["shopping", "Clothing"]
+  "HOLLISTER": ["shopping", "Clothing"]
+  "ABERCROMBIE": ["shopping", "Clothing"]
+  "VICTORIA'S SECRET": ["shopping", "Clothing"]
+  "LULULEMON": ["shopping", "Clothing"]
+  "PATAGONIA": ["shopping", "Clothing"]
+  "NORTH FACE": ["shopping", "Clothing"]
+  "COLUMBIA": ["shopping", "Clothing"]
+  
+  # Groceries & Supermarkets
+  "SAFEWAY": ["groceries", "Food & Essentials"]
+  "KROGER": ["groceries", "Food & Essentials"]
+  "WHOLE FOODS": ["groceries", "Food & Essentials"]
+  "TRADER JOES": ["groceries", "Food & Essentials"]
+  "ALBERTSONS": ["groceries", "Food & Essentials"]
+  "PUBLIX": ["groceries", "Food & Essentials"]
+  "MEIJER": ["groceries", "Food & Essentials"]
+  "HY-VEE": ["groceries", "Food & Essentials"]
+  "WINN-DIXIE": ["groceries", "Food & Essentials"]
+  "FOOD LION": ["groceries", "Food & Essentials"]
+  "HARRIS TEETER": ["groceries", "Food & Essentials"]
+  "GIANT": ["groceries", "Food & Essentials"]
+  "STOP & SHOP": ["groceries", "Food & Essentials"]
+  "METRO": ["groceries", "Food & Essentials"]
+  "LOBLAWS": ["groceries", "Food & Essentials"]
+  "SOBEYS": ["groceries", "Food & Essentials"]
+  "FRESHCO": ["groceries", "Food & Essentials"]
+  "NO FRILLS": ["groceries", "Food & Essentials"]
+  "REAL CANADIAN SUPERSTORE": ["groceries", "Food & Essentials"]
+  "DOLLARAMA": ["shopping", "General Shopping"]
+  
+  # Gas Stations
+  "ESSO": ["transport", "Gas & Fuel"]
+  "SHELL": ["transport", "Gas & Fuel"]
+  "PETRO CANADA": ["transport", "Gas & Fuel"]
+  "CHEVRON": ["transport", "Gas & Fuel"]
+  "EXXON": ["transport", "Gas & Fuel"]
+  "MOBIL": ["transport", "Gas & Fuel"]
+  "BP": ["transport", "Gas & Fuel"]
+  "CITGO": ["transport", "Gas & Fuel"]
+  "SUNOCO": ["transport", "Gas & Fuel"]
+  "VALERO": ["transport", "Gas & Fuel"]
+  "SPEEDWAY": ["transport", "Gas & Fuel"]
+  "CASEY'S": ["transport", "Gas & Fuel"]
+  "CIRCLE K": ["transport", "Gas & Fuel"]
+  "7-ELEVEN": ["transport", "Gas & Fuel"]
+  
+  # Entertainment & Streaming
+  "NETFLIX": ["entertainment", "Streaming & Subscriptions"]
+  "SPOTIFY": ["entertainment", "Streaming & Subscriptions"]
+  "DISNEY": ["entertainment", "Streaming & Subscriptions"]
+  "HULU": ["entertainment", "Streaming & Subscriptions"]
+  "PRIME VIDEO": ["entertainment", "Streaming & Subscriptions"]
+  "APPLE TV": ["entertainment", "Streaming & Subscriptions"]
+  "YOUTUBE": ["entertainment", "Streaming & Subscriptions"]
+  "YOUTUBE MUSIC": ["entertainment", "Streaming & Subscriptions"]
+  "APPLE MUSIC": ["entertainment", "Streaming & Subscriptions"]
+  "PANDORA": ["entertainment", "Streaming & Subscriptions"]
+  "CINEPLEX": ["entertainment", "Movies & Events"]
+  "AMC": ["entertainment", "Movies & Events"]
+  "REGAL": ["entertainment", "Movies & Events"]
+  "CINEMARK": ["entertainment", "Movies & Events"]
+  "IMAX": ["entertainment", "Movies & Events"]
+  "STEAM": ["entertainment", "Gaming"]
+  "EPIC GAMES": ["entertainment", "Gaming"]
+  "XBOX": ["entertainment", "Gaming"]
+  "PLAYSTATION": ["entertainment", "Gaming"]
+  "NINTENDO": ["entertainment", "Gaming"]
+  "TWITCH": ["entertainment", "Gaming"]
+  "DISCORD": ["entertainment", "Gaming"]
+  
+  # Technology & Electronics
+  "APPLE": ["shopping", "Electronics"]
+  "GOOGLE": ["bills_utilities", "Internet"]
+  "MICROSOFT": ["shopping", "Electronics"]
+  "SAMSUNG": ["shopping", "Electronics"]
+  "SONY": ["shopping", "Electronics"]
+  "LG": ["shopping", "Electronics"]
+  "DELL": ["shopping", "Electronics"]
+  "HP": ["shopping", "Electronics"]
+  "LENOVO": ["shopping", "Electronics"]
+  "ASUS": ["shopping", "Electronics"]
+  "ACER": ["shopping", "Electronics"]
+  "RAZER": ["shopping", "Electronics"]
+  "CORSAIR": ["shopping", "Electronics"]
+  "LOGITECH": ["shopping", "Electronics"]
+  "INTEL": ["shopping", "Electronics"]
+  "AMD": ["shopping", "Electronics"]
+  "NVIDIA": ["shopping", "Electronics"]
+  
+  # Health & Pharmacy
+  "CVS": ["health", "Pharmacy"]
+  "WALGREENS": ["health", "Pharmacy"]
+  "RITE AID": ["health", "Pharmacy"]
+  "SHOPPERS DRUG MART": ["health", "Pharmacy"]
+  "LONDON DRUGS": ["shopping", "General Shopping"]
+  "REXALL": ["health", "Pharmacy"]
+  "JEAN COUTU": ["health", "Pharmacy"]
+  "UNIPRIX": ["health", "Pharmacy"]
+  "PHARMAPRIX": ["health", "Pharmacy"]
+  
+  # Travel & Airlines
+  "DELTA": ["travel", "Transportation"]
+  "AMERICAN AIRLINES": ["travel", "Transportation"]
+  "UNITED": ["travel", "Transportation"]
+  "SOUTHWEST": ["travel", "Transportation"]
+  "JETBLUE": ["travel", "Transportation"]
+  "SPIRIT": ["travel", "Transportation"]
+  "FRONTIER": ["travel", "Transportation"]
+  "ALASKA": ["travel", "Transportation"]
+  "AIR CANADA": ["travel", "Transportation"]
+  "WESTJET": ["travel", "Transportation"]
+  "FLARE": ["travel", "Transportation"]
+  "PORTER": ["travel", "Transportation"]
+  "EXPEDIA": ["travel", "Accommodation"]
+  "BOOKING.COM": ["travel", "Accommodation"]
+  "HOTELS.COM": ["travel", "Accommodation"]
+  "AIRBNB": ["travel", "Accommodation"]
+  "VRBO": ["travel", "Accommodation"]
+  "MARRIOTT": ["travel", "Accommodation"]
+  "HILTON": ["travel", "Accommodation"]
+  "HYATT": ["travel", "Accommodation"]
+  "IHG": ["travel", "Accommodation"]
+  "HOLIDAY INN": ["travel", "Accommodation"]
+  "RAMADA": ["travel", "Accommodation"]
+  "COMFORT INN": ["travel", "Accommodation"]
+  "QUALITY INN": ["travel", "Accommodation"]
+  "DAYS INN": ["travel", "Accommodation"]
+  "SUPER 8": ["travel", "Accommodation"]
+  "MOTEL 6": ["travel", "Accommodation"]
+  
+  # Car Rental
+  "HERTZ": ["travel", "Transportation"]
+  "AVIS": ["travel", "Transportation"]
+  "BUDGET": ["travel", "Transportation"]
+  "ENTERPRISE": ["travel", "Transportation"]
+  "NATIONAL": ["travel", "Transportation"]
+  "ALAMO": ["travel", "Transportation"]
+  "THRIFTY": ["travel", "Transportation"]
+  
+  # Financial Services
+  "PAYPAL": ["shopping", "Financial Services"]
+  "VENMO": ["shopping", "Financial Services"]
+  "CASH APP": ["shopping", "Financial Services"]
+  "ZELLE": ["shopping", "Financial Services"]
+  "SQUARE": ["shopping", "Financial Services"]
+  "STRIPE": ["shopping", "Financial Services"]
+  "WESTERN UNION": ["shopping", "Financial Services"]
+  "MONEYGRAM": ["shopping", "Financial Services"]
+  
+  # Subscription Services
+  "ADOBE": ["entertainment", "Streaming & Subscriptions"]
+  "MICROSOFT 365": ["entertainment", "Streaming & Subscriptions"]
+  "GOOGLE ONE": ["entertainment", "Streaming & Subscriptions"]
+  "DROPBOX": ["entertainment", "Streaming & Subscriptions"]
+  "ICLOUD": ["entertainment", "Streaming & Subscriptions"]
+  "ONEDRIVE": ["entertainment", "Streaming & Subscriptions"]
+  "ZOOM": ["entertainment", "Streaming & Subscriptions"]
+  "SLACK": ["entertainment", "Streaming & Subscriptions"]
+  "CANVA": ["entertainment", "Streaming & Subscriptions"]
+  "FIGMA": ["entertainment", "Streaming & Subscriptions"]
+  "NOTION": ["entertainment", "Streaming & Subscriptions"]
+  "EVERNOTE": ["entertainment", "Streaming & Subscriptions"]
+  "LASTPASS": ["entertainment", "Streaming & Subscriptions"]
+  "1PASSWORD": ["entertainment", "Streaming & Subscriptions"]
+  "NORDVPN": ["entertainment", "Streaming & Subscriptions"]
+  "EXPRESSVPN": ["entertainment", "Streaming & Subscriptions"]
+  "SURFSHARK": ["entertainment", "Streaming & Subscriptions"]
+
+# Regex patterns for common keywords
+regex_patterns:
+  "UBEREATS|DOORDASH|SKIP THE DISHES": ["restaurants", "Food Delivery"]
+  "SPOTIFY|APPLE MUSIC|YOUTUBE MUSIC": ["entertainment", "Streaming & Subscriptions"]
+  "NETFLIX|DISNEY|PRIME VIDEO": ["entertainment", "Streaming & Subscriptions"]
+  "PHARMACY|DRUG STORE": ["health", "Pharmacy"]
+  "GAS STATION|FUEL": ["transport", "Gas & Fuel"]
+  "GROCERY|SUPERMARKET": ["groceries", "Food & Essentials"]
+  "RENT|RENTAL": ["housing", "Rent & Mortgage"]
+  "MORTGAGE": ["housing", "Rent & Mortgage"]
+  "INSURANCE": ["bills_utilities", "Insurance"]
+  "ELECTRICITY|POWER": ["bills_utilities", "Utilities"]
+  "WATER BILL|HYDRO BILL|WATER UTILITY|HYDRO UTILITY": ["bills_utilities", "Utilities"]
+  "INTERNET|WIFI": ["bills_utilities", "Phone & Internet"]
+  "MOBILE BILL|CELL BILL|MOBILE PHONE|CELL PHONE": ["bills_utilities", "Phone & Internet"]
+  "CREDIT CARD PAYMENT|PAYMENT RECEIVED": ["income", "Refunds"]
+  "TRANSFER|DEPOSIT": ["income", "Refunds"]
+  "ATM|CASH WITHDRAWAL": ["income", "Refunds"]
+  "CASHBACK|REWARD": ["income", "Cashback"]
+  "REFUND|RETURN": ["income", "Refunds"]
+  "PARKING|PARK": ["transport", "Parking"]
+
+# MCC Code mappings (if available)
+mcc_codes:
+  "5411": ["groceries", "Food & Essentials"]
+  "5812": ["restaurants", "Dining Out"]
+  "5814": ["restaurants", "Dining Out"]
+  "5541": ["transport", "Gas & Fuel"]
+  "4111": ["transport", "Public Transit"]
+  "4121": ["transport", "Ride Share"]
+  "4131": ["transport", "Public Transit"]
+  "4511": ["transport", "Transportation"]
+  "7011": ["travel", "Accommodation"]
+  "5813": ["entertainment", "Movies & Events"]
+  "5815": ["entertainment", "Movies & Events"]
+  "5733": ["entertainment", "Streaming & Subscriptions"]
+  "7523": ["transport", "Parking"]

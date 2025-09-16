@@ -116,6 +116,10 @@ def _extract_card_name_from_filename(filename: str) -> str:
 def _apply_rules_or_llm(df: pd.DataFrame, model_name: str, filename: str = "") -> Tuple[str, HeaderMap]:
     headers = _headers_lower(df)
     
+    # Extract card name directly from filename (always use filename-based naming)
+    card_name = _extract_card_name_from_filename(filename)
+    logger.info(f"Card name: {card_name}")
+    
     bank = detect_known_bank(headers)
     if bank:
         logger.info(f"Detected bank: {bank}")
@@ -134,7 +138,7 @@ def _apply_rules_or_llm(df: pd.DataFrame, model_name: str, filename: str = "") -
                 flow_credit_values=["Credit"],
                 currency_literal="CAD",
             )
-            return bank, hm
+            return card_name, hm
         if bank == "neo":
             hm = HeaderMap(
                 txn_date="Transaction Date",
@@ -147,14 +151,10 @@ def _apply_rules_or_llm(df: pd.DataFrame, model_name: str, filename: str = "") -
                 flow_credit_values=[],
                 currency_literal="CAD",
             )
-            return bank, hm
+            return card_name, hm
 
     # Unknown → LLM mapping
     logger.info(f"Unknown bank format - using LLM mapping")
-    
-    # Extract card name directly from filename
-    card_name = _extract_card_name_from_filename(filename)
-    logger.info(f"Card name: {card_name}")
     
     result = map_headers_with_llm(list(df.columns), model_name=model_name)
     return card_name, result
@@ -218,7 +218,7 @@ def ingest_files(paths: List[str], account_id: str = "default", model_name: str 
     clean_df = pd.DataFrame(clean_rows)
     bad_df = pd.DataFrame(bad_rows)
     if not clean_df.empty:
-        clean_df = clean_df.sort_values(["txn_date","amount"]).reset_index(drop=True)
+        clean_df = clean_df.sort_values("txn_date", ascending=True).reset_index(drop=True)
     
     logger.info(f"Processed: {len(clean_df)} clean, {len(bad_df)} quarantine")
     

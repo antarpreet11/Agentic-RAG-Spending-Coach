@@ -135,6 +135,12 @@ server/data/raw/*.csv
 server/data/raw/*.xlsx
 server/data/raw/*.json
 
+# Classified data files
+server/data/classified/*.csv
+server/data/classified/*.json
+server/data/classified/*.parquet
+
+
 # Model files and checkpoints
 *.pkl
 *.joblib
